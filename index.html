@@ -1,145 +1,237 @@
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="description" content="HTTrack is an easy-to-use website mirror utility. It allows you to download a World Wide website from the Internet to a local directory,building recursively all structures, getting html, images, and other files from the server to your computer. Links are rebuiltrelatively so that you can freely browse to the local site (works with any browser). You can mirror several sites together so that you can jump from one toanother. You can, also, update an existing mirror site, or resume an interrupted download. The robot is fully configurable, with an integrated help" />
-	<meta name="keywords" content="httrack, HTTRACK, HTTrack, winhttrack, WINHTTRACK, WinHTTrack, offline browser, web mirror utility, aspirateur web, surf offline, web capture, www mirror utility, browse offline, local  site builder, website mirroring, aspirateur www, internet grabber, capture de site web, internet tool, hors connexion, unix, dos, windows 95, windows 98, solaris, ibm580, AIX 4.0, HTS, HTGet, web aspirator, web aspirateur, libre, GPL, GNU, free software" />
-	<title>List of available projects - HTTrack Website Copier</title>
-	<!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Car Help</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<style type="text/css">
-	<!--
+        body {
+            font-family: Arial, sans-serif;
+            background: transparent;
+            color: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+        }
 
-body {
-	margin: 0;  padding: 0;  margin-bottom: 15px;  margin-top: 8px;
-	background: #77b;
-}
-body, td {
-	font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-	}
+        .help-container {
+            position: fixed;
+            top: 15%;
+            left: 2%;
+            width: 250px;
+            height: 70%;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid #ffd700;
+            border-radius: 6px;
+            padding: 15px;
+            overflow-y: auto;
+        }
 
-#subTitle {
-	background: #000;  color: #fff;  padding: 4px;  font-weight: bold; 
-	}
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ffd700;
+        }
 
-#siteNavigation a, #siteNavigation .current {
-	font-weight: bold;  color: #448;
-	}
-#siteNavigation a:link    { text-decoration: none; }
-#siteNavigation a:visited { text-decoration: none; }
+        .header h1 {
+            font-size: 16px;
+            color: #ffd700;
+            margin-bottom: 3px;
+        }
 
-#siteNavigation .current { background-color: #ccd; }
+        .header p {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
 
-#siteNavigation a:hover   { text-decoration: none;  background-color: #fff;  color: #000; }
-#siteNavigation a:active  { text-decoration: none;  background-color: #ccc; }
+        .section {
+            margin-bottom: 12px;
+        }
 
+        .section-title {
+            font-size: 11px;
+            color: #ffd700;
+            margin-bottom: 6px;
+            font-weight: bold;
+            text-align: center;
+            padding: 3px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 3px;
+        }
 
-a:link    { text-decoration: underline;  color: #00f; }
-a:visited { text-decoration: underline;  color: #000; }
-a:hover   { text-decoration: underline;  color: #c00; }
-a:active  { text-decoration: underline; }
+        .control-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+            font-size: 9px;
+            padding: 2px 4px;
+        }
 
-#pageContent {
-	clear: both;
-	border-bottom: 6px solid #000;
-	padding: 10px;  padding-top: 20px;
-	line-height: 1.65em;
-	background-image: url(backblue.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
-	}
+        .control-key {
+            background: rgba(255, 215, 0, 0.8);
+            color: #000000;
+            padding: 2px 6px;
+            border-radius: 3px;
+            min-width: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 8px;
+        }
 
-#pageContent, #siteNavigation {
-	background-color: #ccd;
-	}
+        .control-desc {
+            color: rgba(255, 255, 255, 0.9);
+            margin-left: 6px;
+        }
 
+        .status {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
 
-.imgLeft  { float: left;   margin-right: 10px;  margin-bottom: 10px; }
-.imgRight { float: right;  margin-left: 10px;   margin-bottom: 10px; }
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3px;
+            font-size: 9px;
+        }
 
-hr { height: 1px;  color: #000;  background-color: #000;  margin-bottom: 15px; }
+        .status-label {
+            color: rgba(255, 255, 255, 0.8);
+        }
 
-h1 { margin: 0;  font-weight: bold;  font-size: 2em; }
-h2 { margin: 0;  font-weight: bold;  font-size: 1.6em; }
-h3 { margin: 0;  font-weight: bold;  font-size: 1.3em; }
-h4 { margin: 0;  font-weight: bold;  font-size: 1.18em; }
+        .status-value {
+            color: #ffd700;
+            font-weight: bold;
+        }
 
-.blak { background-color: #000; }
-.hide { display: none; }
-.tableWidth { min-width: 400px; }
+        .footer {
+            text-align: center;
+            font-size: 8px;
+            color: rgba(255, 215, 0, 0.7);
+            margin-top: 10px;
+            padding: 4px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 3px;
+        }
 
-.tblRegular       { border-collapse: collapse; }
-.tblRegular td    { padding: 6px;  background-image: url(fade.gif);  border: 2px solid #99c; }
-.tblHeaderColor, .tblHeaderColor td { background: #99c; }
-.tblNoBorder td   { border: 0; }
+        .emergency {
+            background: rgba(255, 100, 100, 0.15);
+            border-radius: 4px;
+            padding: 6px;
+            margin-bottom: 10px;
+        }
 
-
-// -->
-</style>
-
+        .emergency-title {
+            font-size: 10px;
+            color: #ffcccc;
+            text-align: center;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="3" class="tableWidth">
-	<tr>
-	<td id="subTitle">HTTrack Website Copier - Open Source offline browser</td>
-	</tr>
-</table>
-<table width="76%" border="0" align="center" cellspacing="0" cellpadding="0" class="tableWidth">
-<tr class="blak">
-<td>
-	<table width="100%" border="0" align="center" cellspacing="1" cellpadding="0">
-	<tr>
-	<td colspan="6"> 
-		<table width="100%" border="0" align="center" cellspacing="0" cellpadding="10">
-		<tr> 
-		<td id="pageContent"> 
-<!-- ==================== End prologue ==================== -->
+    <div class="help-container">
+        <div class="header">
+            <h1>Remote Car Control</h1>
+            <p>Vehicle Remote Control System</p>
+        </div>
 
+        <div class="status">
+            <div class="status-item">
+                <span class="status-label">Status:</span>
+                <span class="status-value">Connected</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Audio:</span>
+                <span class="status-value">Vehicle Mode</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Noclip:</span>
+                <span class="status-value">Disabled</span>
+            </div>
+        </div>
 
-<h1 ALIGN=Center>Index of locally available projects:</H1>
-  <table border="0" width="100%" cellspacing="1" cellpadding="0">
-		<TH>
-		<BR/>
-			No categories
-		</TH>
-		<TR>
-		  <TD BACKGROUND="fade.gif">
-                    &middot; <A HREF="New%20folder/index.html">New folder</A>
-   		  </TD>
-		</TR>
-		<TR>
-		  <TD BACKGROUND="fade.gif">
-                    &middot; <A HREF="website/index.html">website</A>
-   		  </TD>
-		</TR>
-	</TABLE>
-	<BR>
-	<H6 ALIGN="RIGHT">
-         <I>Mirror and index made by HTTrack Website Copier [XR&CO'2008]</I>
-	</H6>
-	<!-- Mirror and index made by HTTrack Website Copier/3.49-2 [XR&CO'2014] -->
-	<!-- Thanks for using HTTrack Website Copier! -->
+        <div class="section">
+            <div class="section-title">Vehicle Movement</div>
+            <div class="control-item">
+                <div class="control-key">W A S D</div>
+                <div class="control-desc">Drive Vehicle</div>
+            </div>
+            <div class="control-item">
+                <div class="control-key">SPACE</div>
+                <div class="control-desc">Brake / Stop</div>
+            </div>
+            <div class="control-item">
+                <div class="control-key">SHIFT</div>
+                <div class="control-desc">Speed Boost</div>
+            </div>
+        </div>
 
-<!-- ==================== Start epilogue ==================== -->
-		</td>
-		</tr>
-		</table>
-	</td>
-	</tr>
-	</table>
-</td>
-</tr>
-</table>
+        <div class="section">
+            <div class="section-title">Camera & View</div>
+            <div class="control-item">
+                <div class="control-key">G</div>
+                <div class="control-desc">Switch Camera View</div>
+            </div>
+            <div class="control-item">
+                <div class="control-key">MOUSE</div>
+                <div class="control-desc">Look Around</div>
+            </div>
+        </div>
 
-<table width="76%" border="0" align="center" valign="bottom" cellspacing="0" cellpadding="0">
-	<tr>
-	<td id="footer"><small>&copy; 2008 Xavier Roche & other contributors - Web Design: Leto Kauler.</small></td>
-	</tr>
-</table>
+        <div class="section">
+            <div class="section-title">Special Features</div>
+            <div class="control-item">
+                <div class="control-key">F</div>
+                <div class="control-desc">Noclip Car Mode</div>
+            </div>
+            <div class="control-item">
+                <div class="control-key">M</div>
+                <div class="control-desc">Audio Source Toggle</div>
+            </div>
+            <div class="control-item">
+                <div class="control-key">R</div>
+                <div class="control-desc">Repair Vehicle</div>
+            </div>
+        </div>
 
+        <div class="section">
+            <div class="section-title">Noclip Mode Only</div>
+            <div class="control-item">
+                <div class="control-key">Q</div>
+                <div class="control-desc">Fly Up</div>
+            </div>
+            <div class="control-item">
+                <div class="control-key">Z</div>
+                <div class="control-desc">Fly Down</div>
+            </div>
+        </div>
+
+        <div class="emergency">
+            <div class="emergency-title">Emergency Controls</div>
+            <div class="control-item">
+                <div class="control-key">Y</div>
+                <div class="control-desc">Destroy Vehicle</div>
+            </div>
+            <div class="control-item">
+                <div class="control-key">X</div>
+                <div class="control-desc">Exit Remote Control</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Press F6 to hide/show this menu
+        </div>
+    </div>
 </body>
-
 </html>
-
-
