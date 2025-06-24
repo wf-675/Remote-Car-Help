@@ -3,197 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remote Car Help</title>
+    <title>Car Controls</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: transparent;
-            color: #ffffff;
-            height: 100vh;
-            overflow: hidden;
+            margin: 0;
+            padding: 20px;
+            color: #f5f5f5;
         }
-
-        .help-container {
-            position: fixed;
-            top: 20%;
-            left: 2%;
-            width: 240px;
-            background: rgba(0, 0, 0, 0.75);
-            border: 1px solid #ffd700;
-            border-radius: 6px;
-            padding: 12px;
-            padding-bottom: 15px;
+        .help-box {
+            max-width: 240px;
+            background: rgba(38, 38, 38, 0.8);
+            border-radius: 12px;
+            padding: 18px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
         }
-
-        .header {
+        .title {
             text-align: center;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #ffd700;
+            color: #facc15;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
         }
-
-        .header h1 {
-            font-size: 15px;
-            color: #ffd700;
-            margin-bottom: 2px;
-        }
-
-        .header p {
-            font-size: 9px;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .section {
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            font-size: 10px;
-            color: #ffd700;
-            margin-bottom: 5px;
-            font-weight: bold;
-            text-align: center;
-            padding: 2px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 3px;
-        }
-
-        .control-item {
-            display: flex;
-            justify-content: space-between;
+        .control {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
             align-items: center;
-            margin-bottom: 3px;
-            font-size: 8px;
-            padding: 1px 3px;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #f8fafc;
+            font-weight: 400;
+            line-height: 1.2;
         }
-
-        .control-key {
-            background: rgba(255, 215, 0, 0.8);
-            color: #000000;
-            padding: 1px 4px;
-            border-radius: 2px;
-            min-width: 28px;
+        .key {
+            background: #facc15;
+            color: #1e293b;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 11px;
             text-align: center;
-            font-weight: bold;
-            font-size: 7px;
+            letter-spacing: 0.01em;
         }
-
-        .control-desc {
-            color: rgba(255, 255, 255, 0.9);
-            margin-left: 4px;
-        }
-
         .footer {
             text-align: center;
-            font-size: 7px;
-            color: rgba(255, 215, 0, 0.7);
-            margin-top: 8px;
-            margin-bottom: 0;
-            padding: 4px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 3px;
-        }
-
-        .emergency {
-            background: rgba(255, 100, 100, 0.15);
-            border-radius: 3px;
-            padding: 4px;
-            margin-bottom: 8px;
-        }
-
-        .emergency-title {
-            font-size: 9px;
-            color: #ffcccc;
-            text-align: center;
-            margin-bottom: 3px;
-            font-weight: bold;
+            color: #cbd5e1;
+            font-size: 11px;
+            margin-top: 14px;
+            opacity: 0.8;
+            font-weight: 400;
         }
     </style>
 </head>
 <body>
-    <div class="help-container">
-        <div class="header">
-            <h1>Remote Car Control 1</h1>
-            <p>Vehicle Remote Control System</p>
+    <div class="help-box">
+        <div class="title">Car Controls</div>
+        
+        <div class="control">
+            <span>Drive</span>
+            <span class="key">WASD</span>
         </div>
-
-        <div class="section">
-            <div class="section-title">Vehicle Movement</div>
-            <div class="control-item">
-                <div class="control-key">W A S D</div>
-                <div class="control-desc">Drive Vehicle</div>
-            </div>
-            <div class="control-item">
-                <div class="control-key">SPACE</div>
-                <div class="control-desc">Brake / Stop</div>
-            </div>
-            <div class="control-item">
-                <div class="control-key">SHIFT</div>
-                <div class="control-desc">Speed Boost</div>
-            </div>
+        
+        <div class="control">
+            <span>Brake</span>
+            <span class="key">Space</span>
         </div>
-
-        <div class="section">
-            <div class="section-title">Camera & View</div>
-            <div class="control-item">
-                <div class="control-key">G</div>
-                <div class="control-desc">Switch Camera View</div>
-            </div>
-            <div class="control-item">
-                <div class="control-key">MOUSE</div>
-                <div class="control-desc">Look Around</div>
-            </div>
+        
+        <div class="control">
+            <span>Boost</span>
+            <span class="key">Shift</span>
         </div>
-
-        <div class="section">
-            <div class="section-title">Special Features</div>
-            <div class="control-item">
-                <div class="control-key">F</div>
-                <div class="control-desc">Noclip Car Mode</div>
-            </div>
-            <div class="control-item">
-                <div class="control-key">M</div>
-                <div class="control-desc">Audio Source Toggle</div>
-            </div>
-            <div class="control-item">
-                <div class="control-key">R</div>
-                <div class="control-desc">Repair Vehicle</div>
-            </div>
+        
+        <div class="control">
+            <span>Camera</span>
+            <span class="key">G</span>
         </div>
-
-        <div class="section">
-            <div class="section-title">Noclip Mode Only</div>
-            <div class="control-item">
-                <div class="control-key">Q</div>
-                <div class="control-desc">Fly Up</div>
-            </div>
-            <div class="control-item">
-                <div class="control-key">Z</div>
-                <div class="control-desc">Fly Down</div>
-            </div>
+        
+        <div class="control">
+            <span>Noclip</span>
+            <span class="key">F</span>
         </div>
-
-        <div class="emergency">
-            <div class="emergency-title">Emergency Controls</div>
-            <div class="control-item">
-                <div class="control-key">Y</div>
-                <div class="control-desc">Destroy Vehicle</div>
-            </div>
-            <div class="control-item">
-                <div class="control-key">X</div>
-                <div class="control-desc">Exit Remote Control</div>
-            </div>
+        
+        <div class="control">
+            <span>Fly Up</span>
+            <span class="key">Q</span>
         </div>
-
-        <div class="footer">
-            Press F6 to hide/show this menu
+        
+        <div class="control">
+            <span>Fly Down</span>
+            <span class="key">Z</span>
         </div>
+        
+        <div class="control">
+            <span>Repair</span>
+            <span class="key">R</span>
+        </div>
+        
+        <div class="control">
+            <span>Exit</span>
+            <span class="key">X</span>
+        </div>
+        
+        <div class="footer">F6 to toggle</div>
     </div>
 </body>
 </html>
