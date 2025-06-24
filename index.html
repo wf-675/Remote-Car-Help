@@ -21,46 +21,46 @@
 
         .help-container {
             position: fixed;
-            top: 15%;
+            top: 20%;
             left: 2%;
-            width: 250px;
-            height: 70%;
+            width: 240px;
+            height: auto;
+            max-height: 50%;
             background: rgba(0, 0, 0, 0.75);
             border: 1px solid #ffd700;
             border-radius: 6px;
-            padding: 15px;
-            overflow-y: auto;
+            padding: 12px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 1px solid #ffd700;
         }
 
         .header h1 {
-            font-size: 16px;
+            font-size: 15px;
             color: #ffd700;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .header p {
-            font-size: 10px;
+            font-size: 9px;
             color: rgba(255, 255, 255, 0.7);
         }
 
         .section {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .section-title {
-            font-size: 11px;
+            font-size: 10px;
             color: #ffd700;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             font-weight: bold;
             text-align: center;
-            padding: 3px;
+            padding: 2px;
             background: rgba(255, 215, 0, 0.1);
             border-radius: 3px;
         }
@@ -69,72 +69,49 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 4px;
-            font-size: 9px;
-            padding: 2px 4px;
+            margin-bottom: 3px;
+            font-size: 8px;
+            padding: 1px 3px;
         }
 
         .control-key {
             background: rgba(255, 215, 0, 0.8);
             color: #000000;
-            padding: 2px 6px;
-            border-radius: 3px;
-            min-width: 30px;
+            padding: 1px 4px;
+            border-radius: 2px;
+            min-width: 28px;
             text-align: center;
             font-weight: bold;
-            font-size: 8px;
+            font-size: 7px;
         }
 
         .control-desc {
             color: rgba(255, 255, 255, 0.9);
-            margin-left: 6px;
-        }
-
-        .status {
-            background: rgba(255, 215, 0, 0.1);
-            padding: 8px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-        }
-
-        .status-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 3px;
-            font-size: 9px;
-        }
-
-        .status-label {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .status-value {
-            color: #ffd700;
-            font-weight: bold;
+            margin-left: 4px;
         }
 
         .footer {
             text-align: center;
-            font-size: 8px;
+            font-size: 7px;
             color: rgba(255, 215, 0, 0.7);
-            margin-top: 10px;
-            padding: 4px;
+            margin-top: 5px;
+            padding: 3px;
             background: rgba(255, 215, 0, 0.1);
             border-radius: 3px;
         }
 
         .emergency {
             background: rgba(255, 100, 100, 0.15);
-            border-radius: 4px;
-            padding: 6px;
-            margin-bottom: 10px;
+            border-radius: 3px;
+            padding: 4px;
+            margin-bottom: 5px;
         }
 
         .emergency-title {
-            font-size: 10px;
+            font-size: 9px;
             color: #ffcccc;
             text-align: center;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
             font-weight: bold;
         }
     </style>
@@ -144,21 +121,6 @@
         <div class="header">
             <h1>Remote Car Control</h1>
             <p>Vehicle Remote Control System</p>
-        </div>
-
-        <div class="status">
-            <div class="status-item">
-                <span class="status-label">Status:</span>
-                <span class="status-value">Connected</span>
-            </div>
-            <div class="status-item">
-                <span class="status-label">Audio:</span>
-                <span class="status-value">Vehicle Mode</span>
-            </div>
-            <div class="status-item">
-                <span class="status-label">Noclip:</span>
-                <span class="status-value">Disabled</span>
-            </div>
         </div>
 
         <div class="section">
