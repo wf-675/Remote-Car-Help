@@ -15,7 +15,7 @@
         html, body {
             font-family: 'Inter', sans-serif;
             background: transparent !important;
-            background-color: transparent !important;
+            background-color: transparent !important; /* هذا مهم جدًا للشفافية */
             height: 100vh;
             width: 100vw;
             overflow: hidden;
@@ -24,12 +24,13 @@
         body {
             display: flex;
             align-items: center;
-            padding-left: 2rem; /* This will shift the box to the left */
+            padding-left: 2rem;
         }
 
         .help-box {
-            width: 280px; /* Width of your help box */
-            background: rgba(38, 38, 38, 0.85);
+            width: 280px;
+            /* باقي الستايلات الخاصة بالـ help-box */
+            background: rgba(38, 38, 38, 0.85); /* خلفية لوحة المساعدة نفسها */
             backdrop-filter: blur(12px);
             border-radius: 12px;
             padding: 16px;
@@ -151,7 +152,7 @@
         <div class="logo">
             <img src="https://cdn.discordapp.com/icons/1211801380830838804/c9996187afebc20c63fb6a7c05c97b22.webp?size=1024" alt="Logo">
         </div>
-        <div class="title">REMOTE CAR CONTROLS</div>
+        <div class="title">REMOTE CAR CONTROLS 1</div>
 
         <div class="control">
             <span>Drive</span>
